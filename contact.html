@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Swami Vivekananda Tribute</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1 class="title">Contact Us</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="biography.html">Biography</a></li>
+            <li><a href="teachings.html">Teachings</a></li>
+            <li><a href="speeches.html">Speeches</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="/submit-form" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>Phone: <a href="tel:+917420862044">7420862044</a></p>
+            <p>Email: <a href="mailto:shivprasad.2231717@viit.ac.in">shivprasad.2231717@viit.ac.in</a></p>
+            <h3>Follow Me on Social Media</h3>
+            <ul class="social-links">
+                <li><a href="https://www.instagram.com/shivprasaddhumal?igsh=MXRuc3F2dGt5dm53cQ==" target="_blank"><img src="insta.png" alt="Instagram"> Instagram</a></li>
+                <li><a href="https://www.facebook.com/share/1A7ZKmxWDw/" target="_blank"><img src="Facebook.png" alt="Facebook"> Facebook</a></li>
+                <!-- Add other social links and logos as needed -->
+            </ul>
+        </div>
+
+        <!-- Quote Section -->
+        <div class="quote">
+            <p>"You cannot believe in God until you believe in yourself."</p>
+            <p>- Swami Vivekananda</p>
+        </div>
+
+    </section>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <a href="gallery.html" class="prev-button">← Previous</a>
+        <a href="index.html" class="next-button">Home →</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,845 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f1e4;
+}
+
+/* Page Container as Flex Layout */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #ff6600;
+  color: white;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  width: 120px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 20px;
+}
+
+.title {
+  font-size: 32px;
+  margin: 0;
+  font-family: 'Georgia', serif; /* Sets a serif font for a classic look */
+  font-weight: bold; /* Makes the text bold */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
+}
+
+/* Navigation Bar directly below the header */
+.navbar {
+  background: #d35400;
+  padding: 10px 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: gold;
+}
+
+/* Video Container: fills remaining space between nav and footer */
+.video-container {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Next Button fixed at bottom */
+.next-button {
+  padding: 20px;
+  text-align: center;
+  background: transparent;
+}
+
+.next-button a {
+  background: gold;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.next-button a:hover {
+  background: white;
+  color: black;
+}
+
+/* Optional: Add focus styles for accessibility */
+.nav-links a:focus,
+.next-button a:focus {
+  outline: 2px solid #ff6600;
+  outline-offset: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100px;
+  }
+
+  .title {
+    font-size: 24px; /* Adjusted font size for smaller screens */
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+/* Biography Page Styles */
+.biography-container {
+display: flex;
+flex-direction: column;
+height: 100vh;
+}
+
+/* Header Section */
+.header {
+display: flex;
+align-items: center;
+padding: 20px;
+background-color: #ff6600;
+color: white;
+justify-content: center;
+position: relative;
+}
+
+.logo {
+width: 120px;
+height: auto;
+margin-right: 20px;
+}
+
+.title {
+font-size: 32px;
+margin: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+background: #d35400;
+padding: 10px 0;
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+justify-content: center;
+}
+
+.nav-links li {
+margin: 0 15px;
+}
+
+.nav-links a {
+text-decoration: none;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: color 0.3s;
+}
+
+.nav-links a:hover {
+color: gold;
+}
+
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f1e4;
+  text-align: center;
+}
+
+/* Page Container as Flex Layout */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #ff6600;
+  color: white;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  width: 120px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 20px;
+}
+
+.title {
+  font-size: 2.5rem; /* Responsive font size */
+  margin: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: #d35400;
+  padding: 10px 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.125rem; /* Responsive font size */
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: gold;
+}
+
+/* Biography Content */
+.biography-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.biography-text {
+  font-size: 1.125rem; /* Responsive font size */
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Highlighted Text */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/* Biography Images */
+.biography-images {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center; /* Center-align images */
+}
+
+.biography-image {
+  width: 100%;
+  max-width: 15%; /* Adjust as needed */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+
+/* Next Button */
+.next-button {
+  padding: 20px;
+  text-align: center;
+  background: transparent;
+}
+
+.next-button a {
+  background: gold;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1.125rem; /* Responsive font size */
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.next-button a:hover {
+  background: white;
+  color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .biography-image {
+    width: 100%; /* Ensure images are full width on small screens */
+  }
+}
+
+
+/* Teachings Section */
+.teachings-container {
+  display: flex;
+  flex-direction: column;  /* Ensures the content flows vertically */
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+/* Teachings Block */
+.teaching {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styling */
+.teaching-image {
+  width: 300px; /* Increased image size */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+}
+
+/* Text Styling */
+.teaching-text {
+  flex: 1;
+  text-align: justify;
+}
+
+.teaching h2 {
+  color: #d35400;
+}
+
+/* Full Width Text Block for Teachings Without Images */
+.full-width {
+  text-align: justify;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlighted Text */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto; 
+  padding: 20px;
+}
+
+.prev-button, .next-button {
+  background: gold;
+  color: black;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.prev-button:hover, .next-button:hover {
+  background: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .teaching {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .teaching-image {
+    width: 100%; /* Make image full width */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 15px; /* Add space below image */
+  }
+
+  .teaching-text {
+    text-align: left; /* Align text to the left */
+  }
+
+  .navigation-buttons {
+    flex-direction: column; /* Stack navigation buttons vertically */
+    align-items: center; /* Center align buttons */
+  }
+
+  .prev-button, .next-button {
+    width: 100%; /* Make buttons full width */
+    margin-bottom: 10px; /* Add space between buttons */
+  }
+
+  .prev-button:last-child, .next-button:last-child {
+    margin-bottom: 0; /* Remove margin from last button */
+  }
+}
+
+/* Speeches Section */
+.speeches-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Speech Block */
+.speech {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Alternating Image Position */
+.speech:nth-child(odd) {
+  flex-direction: row;
+}
+
+.speech:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Image Styling */
+.speech-image {
+  width: 280px; /* Maintain original size */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+/* Speech Text */
+.speech-text {
+  flex: 1;
+  text-align: justify;
+}
+
+/* Speech Title */
+.speech h2 {
+  color: #d35400;
+}
+
+/* Read More Link */
+.speech a {
+  display: inline-block;
+  margin-top: 10px;
+  background: gold;
+  color: black;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.speech a:hover {
+  background: white;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.prev-button,
+.next-button {
+  background: gold;
+  color: black;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .speech {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center align content */
+  }
+
+  .speech-image {
+    width: 100%; /* Make image responsive */
+    margin: 10px 0; /* Adjust margins */
+  }
+
+  .speech-text {
+    text-align: center; /* Center align text */
+  }
+
+  .navigation-buttons {
+    flex-direction: column; /* Stack navigation buttons vertically */
+    align-items: center; /* Center align buttons */
+  }
+
+  .prev-button,
+  .next-button {
+    margin: 5px 0; /* Adjust button spacing */
+  }
+}
+
+
+/* Gallery Section */
+.gallery-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Gallery */
+.gallery {
+  margin-bottom: 30px;
+}
+
+.gallery h2 {
+  color: #d35400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gallery-images {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.gallery-image {
+  width: 30%;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-images {
+    justify-content: space-around;
+  }
+
+  .gallery-image {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-image {
+    width: 100%;
+  }
+}
+
+
+/* Library Section */
+.library {
+  margin-bottom: 30px;
+}
+
+/* Library Title */
+.library h2 {
+  color: #d35400;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px; /* Adjusted font size */
+}
+
+/* Library List */
+.library-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px; /* Adjusted font size */
+  text-align: center;
+}
+
+/* Library List Items */
+.library-list li {
+  margin: 8px 0; /* Reduced margin */
+}
+
+/* Library Links */
+.library-list a {
+  text-decoration: none;
+  color: #ff6600;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+.library-list a:hover {
+  color: gold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .library-list {
+    font-size: 14px; /* Further reduced font size for small screens */
+  }
+
+  .library-list li {
+    margin: 5px 0; /* Further reduced margin */
+  }
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+display: flex;
+justify-content: space-between;
+padding: 20px;
+}
+
+.prev-button, .next-button {
+background: gold;
+color: black;
+padding: 12px 25px;
+text-decoration: none;
+font-size: 18px;
+border-radius: 5px;
+font-weight: bold;
+}
+
+.prev-button:hover, .next-button:hover {
+background: white;
+}
+/* Contact Section */
+.contact-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Contact Form */
+.contact-form {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-form h2 {
+  color: #d35400;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.contact-form button {
+  background-color: #ff6600;
+  color: white;
+  font-size: 18px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: gold;
+}
+
+/* Contact Information */
+.contact-info {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-info h3 {
+  color: #d35400;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* Social Media Links */
+.social-links {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.social-links li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #ff6600;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: gold;
+}
+
+.social-links img {
+  width: 40px;  /* Adjust this value as needed */
+  height: auto;
+}
+/* Quote Section */
+.quote {
+  text-align: center;
+  font-size: 22px;
+  color: #555;
+  font-style: italic;
+  margin-top: 40px;
+  font-weight: bold; /* Makes the text bold */
+  font-family: 'Georgia', serif; /* Sets a serif font for a classic look */
+}
+
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.prev-button,
+.next-button {
+  background: gold;
+  color: black;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background: white;
+}
+@media only screen and (max-width: 768px) {
+  /* Adjust styles for medium screens */
+  .contact-form input,
+  .contact-form textarea {
+    width: 90%; /* Slightly less than full width */
+  }
+  .contact-form button {
+    width: 90%; /* Slightly less than full width */
+  }
+  .contact-info p {
+    font-size: 18px; /* Standard text size */
+  }
+  .social-links img {
+    width: 35px; /* Standard icon size */
+  }
+}
