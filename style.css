@@ -11,14 +11,14 @@ body, html {
   background-color: #f8f1e4;
 }
 
-/* Page Container as Flex Layout */
+/* Page Container */
 .page-container {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
 }
 
-/* Header Section */
+/* Header */
 .header {
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@ body, html {
 }
 
 .logo {
-  width: 120px; /* Adjust size as needed */
+  width: 120px;
   height: auto;
   margin-right: 20px;
 }
@@ -38,15 +38,22 @@ body, html {
 .title {
   font-size: 32px;
   margin: 0;
-  font-family: 'Georgia', serif; /* Sets a serif font for a classic look */
-  font-weight: bold; /* Makes the text bold */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation Bar directly below the header */
+/* Navbar (Desktop & Mobile) */
 .navbar {
-  background: #d35400;
+  background-color: #d35400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   padding: 10px 0;
+  position: sticky; /* Fix the navbar at the top on desktop */
+  top: 0;
+  z-index: 10; /* Ensure it's above content */
 }
 
 .nav-links {
@@ -71,27 +78,145 @@ body, html {
   color: gold;
 }
 
-/* Video Container: fills remaining space between nav and footer */
-.video-container {
-  flex-grow: 1;
-  position: relative;
-  overflow: hidden;
+/* Hamburger Menu Styles */
+.menu-toggle {
+  display: none;
 }
 
+.menu-icon {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: none; /* Hidden on PC */
+  background-color: #d35400;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Mobile View (Hamburger Menu Visible, Navbar Hidden) */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show hamburger icon */
+  }
+
+  /* Hide the navbar by default */
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d35400;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  /* Show menu when checkbox is checked */
+  .menu-toggle:checked ~ .navbar .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+/* Ensure Navbar is Always Visible on PC */
+@media (min-width: 769px) {
+  .navbar {
+    display: flex !important;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+  }
+}
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border: none; /* Remove any potential borders */
+  margin: 0;
+  padding: 0;
+}
+
+/* Video element */
 .video-container video {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border: none; /* Remove any video borders */
+  outline: none; /* Remove any focus outline */
 }
 
-/* Next Button fixed at bottom */
+/* Mobile View */
+@media (max-width: 768px) {
+  .video-container {
+    height: 50vh;
+  }
+
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: none;
+  }
+}
+
+/* Biography Section */
+.biography-container {
+  flex-grow: 1; /* Ensure the biography section takes up the remaining space */
+  position: relative;
+}
+
+.biography-content {
+  padding: 20px;
+}
+
+.biography-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.biography-images {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.biography-image {
+  width: 100%;
+  max-width: 20%; /* Adjust as needed */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Next Button */
 .next-button {
   padding: 20px;
   text-align: center;
-  background: transparent;
 }
 
 .next-button a {
@@ -102,12 +227,10 @@ body, html {
   font-size: 18px;
   border-radius: 5px;
   font-weight: bold;
-  transition: background 0.3s;
 }
 
 .next-button a:hover {
   background: white;
-  color: black;
 }
 
 /* Optional: Add focus styles for accessibility */
@@ -117,222 +240,6 @@ body, html {
   outline-offset: 4px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-  }
-
-  .logo {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 100px;
-  }
-
-  .title {
-    font-size: 24px; /* Adjusted font size for smaller screens */
-  }
-
-  .nav-links {
-    flex-direction: column;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-}
-
-/* Biography Page Styles */
-.biography-container {
-display: flex;
-flex-direction: column;
-height: 100vh;
-}
-
-/* Header Section */
-.header {
-display: flex;
-align-items: center;
-padding: 20px;
-background-color: #ff6600;
-color: white;
-justify-content: center;
-position: relative;
-}
-
-.logo {
-width: 120px;
-height: auto;
-margin-right: 20px;
-}
-
-.title {
-font-size: 32px;
-margin: 0;
-}
-
-/* Navigation Bar */
-.navbar {
-background: #d35400;
-padding: 10px 0;
-}
-
-.nav-links {
-list-style: none;
-display: flex;
-justify-content: center;
-}
-
-.nav-links li {
-margin: 0 15px;
-}
-
-.nav-links a {
-text-decoration: none;
-color: white;
-font-weight: bold;
-font-size: 18px;
-transition: color 0.3s;
-}
-
-.nav-links a:hover {
-color: gold;
-}
-
-/* Reset & Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f1e4;
-  text-align: center;
-}
-
-/* Page Container as Flex Layout */
-.page-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Full viewport height */
-}
-
-/* Header Section */
-.header {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: #ff6600;
-  color: white;
-  justify-content: center;
-  position: relative;
-}
-
-.logo {
-  width: 120px; /* Adjust size as needed */
-  height: auto;
-  margin-right: 20px;
-}
-
-.title {
-  font-size: 2.5rem; /* Responsive font size */
-  margin: 0;
-}
-
-/* Navigation Bar */
-.navbar {
-  background: #d35400;
-  padding: 10px 0;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.nav-links li {
-  margin: 0 15px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 1.125rem; /* Responsive font size */
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: gold;
-}
-
-/* Biography Content */
-.biography-content {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  flex-grow: 1;
-  overflow-y: auto;
-}
-
-.biography-text {
-  font-size: 1.125rem; /* Responsive font size */
-  line-height: 1.6;
-  text-align: justify;
-}
-
-/* Highlighted Text */
-.highlight {
-  background-color: yellow;
-  font-weight: bold;
-}
-
-/* Biography Images */
-.biography-images {
-  display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center; /* Center-align images */
-}
-
-.biography-image {
-  width: 100%;
-  max-width: 15%; /* Adjust as needed */
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: 10px;
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-}
-
-
-/* Next Button */
-.next-button {
-  padding: 20px;
-  text-align: center;
-  background: transparent;
-}
-
-.next-button a {
-  background: gold;
-  color: black;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 1.125rem; /* Responsive font size */
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.next-button a:hover {
-  background: white;
-  color: black;
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -358,6 +265,7 @@ body, html {
     width: 100%; /* Ensure images are full width on small screens */
   }
 }
+
 
 
 /* Teachings Section */
@@ -476,49 +384,54 @@ body, html {
   padding: 20px;
   max-width: 900px;
   margin: auto;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Speech Block */
 .speech {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: white;
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Alternating Image Position */
-.speech:nth-child(odd) {
-  flex-direction: row;
-}
-
-.speech:nth-child(even) {
-  flex-direction: row-reverse;
+  gap: 15px; /* Space between text and image */
+  flex-wrap: wrap;
 }
 
 /* Image Styling */
 .speech-image {
-  width: 280px; /* Maintain original size */
+  width: 100%;
+  max-width: 300px; /* Ensures image doesn’t stretch too much */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: 10px;
+  object-fit: cover; /* Maintains aspect ratio */
+  margin: auto;
 }
 
 /* Speech Text */
 .speech-text {
   flex: 1;
   text-align: justify;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 60%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Speech Title */
 .speech h2 {
   color: #d35400;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-/* Read More Link */
+/* Read More Button */
 .speech a {
   display: inline-block;
   margin-top: 10px;
@@ -535,53 +448,34 @@ body, html {
   background: white;
 }
 
-/* Navigation Buttons */
-.navigation-buttons {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.prev-button,
-.next-button {
-  background: gold;
-  color: black;
-  padding: 12px 25px;
-  text-decoration: none;
-  font-size: 18px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.prev-button:hover,
-.next-button:hover {
-  background: white;
-}
-
-/* Responsive Adjustments */
+/* Responsive Fix for Mobile View */
 @media (max-width: 768px) {
   .speech {
-    flex-direction: column; /* Stack image and text vertically */
-    align-items: center; /* Center align content */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
   }
 
   .speech-image {
-    width: 100%; /* Make image responsive */
-    margin: 10px 0; /* Adjust margins */
+    width: 90%; /* Makes the image fit within the container */
+    max-width: 100%;
   }
 
   .speech-text {
-    text-align: center; /* Center align text */
+    text-align: center;
+    max-width: 100%; /* Ensures text doesn't overflow */
+    font-size: 14px;
+    padding: 0 10px;
   }
 
-  .navigation-buttons {
-    flex-direction: column; /* Stack navigation buttons vertically */
-    align-items: center; /* Center align buttons */
+  .speech h2 {
+    font-size: 18px; /* Adjust heading size for better readability */
   }
 
-  .prev-button,
-  .next-button {
-    margin: 5px 0; /* Adjust button spacing */
+  .speech a {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 }
 
